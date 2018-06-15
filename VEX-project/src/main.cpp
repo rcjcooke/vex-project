@@ -15,7 +15,7 @@ static const uint8_t RIGHT_MOTOR_REVERSE_PIN = 5;
 static const float SPEED_RATIO = 0.5;
 static const int LEFT_MID_POINT = 511;
 static const int RIGHT_MID_POINT = 516;
-static const int LOWEST_JOY_SPEED = 10;
+static const int LOWEST_JOY_SPEED = 20;
 static const int HIGHEST_JOY_SPEED = 490;
 
 // Fields

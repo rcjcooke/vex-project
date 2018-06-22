@@ -1,16 +1,16 @@
-#include <Streaming.h>
+#include <Arduino.h>
 
 #include "SerialDisplay.hpp"
 
-SerialDisplay::SerialDisplay(SerialDisplayConfiguration* configuration) {
-  mConfigurationPtr = configuration;
+SerialDisplay::SerialDisplay(SerialDisplayType serialDisplayType) {
+  mSerialDisplayType = serialDisplayType;
 }
 
 void SerialDisplay::clearSerialDisplay() {
-  switch(mConfigurationPtr->getSerialDisplayType()) {
+  switch(mSerialDisplayType) {
     case SerialDisplayType::ansi_vt100:
-      Serial << _BYTE(27) << "[2J";
-      Serial << _BYTE(27) << "[H";
+      Serial.print("\e[2J");
+      Serial.print("\e[H");
       break;
     default:
       break;
